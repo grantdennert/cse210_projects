@@ -19,7 +19,7 @@ class Program
             }
         } while (number != 0);
         int sum = 0;
-        int largest = numbers[1];
+        int largest = numbers[0];
         float average;
         foreach (int item in numbers)
         {
