@@ -1,0 +1,34 @@
+@startuml
+class Program {
+    Main() : void
+    RunMenu() : void
+}
+ 
+class Journal {
+    _entries : List<Entry>
+
+    AddEntry(newEntry : Entry) : void
+    DisplayEntries() : void
+    SaveToFile(fileName : string) : void
+    LoadFromFile(fileName : string) : void
+}
+ 
+class Entry {
+    _date : string
+    _prompt : string
+    _response : string
+
+Display() : void
+}
+
+class PromptGenerator {
+_prompts : List<string>
+
+GeneratePrompt() : string
+}
+ 
+Program --> Journal
+Program --> PromptGenerator
+Program --> Entry
+Journal --> Entry
+@enduml
