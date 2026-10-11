@@ -11,9 +11,8 @@ public class PromptGenerator
     public string GeneratePrompt()
     {
         string prompt;
-        int maxValue = _prompts.Count() - 1;
         Random random = new Random();
-        int randomNumber = random.Next(0, maxValue);
+        int randomNumber = random.Next(_prompts.Count);
         prompt = _prompts[randomNumber];
         return prompt;
     }
