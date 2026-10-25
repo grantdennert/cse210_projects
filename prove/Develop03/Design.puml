@@ -1,0 +1,43 @@
+//www.plantuml.com/plantuml/png/dLB1JiCm3BtxAt9CbUu749ecSG0a9g4DmH65rjiYqcHoN0QQ-7UIRKtNgYTEhP-VN_niBm9huhQnK5aTWdWcloNT766fZPE5k15VtjImQjqINTi3lt0fM5TazjmI7c7s7heWqfvCuDitJ_Ky9WWtIEYgb5Xr_m0gLyj9HYck5GEJSTi2r8EfCIa7gHlVEdxn4KaCupXtg1x3dM_s5XdjJypNUFRpuRq5TO_SlrrayTvNxY7vYZMVcHFZQgVtZ7H-CSORGu5VaG9coEeX0Yehoe5SAGPgfHYB5VylBSMeZUBaFCjDEa-JJQOFyNjjseJp5BiPWafCoVZDu-N8ebl2UkSFydedKvj8EiDMBcSePhDvVs6G_qvuTZ72aneiqDNngly0
+
+@startuml
+class Program{
+Main() : void
+RunMenu() : void
+}
+
+class Scripture{
+-_scripture : List<Word>
+-_reference : Reference
+
++Scripture(reference : Reference, scripture : string)
++HideWords(amountToHide : int) : void
++IsCompletelyHidden() : bool
++GetScripture() : string
+}
+
+class Reference{
+-_book : string
+-_chapter : int
+-_firstVerse : int
+-_lastVerse : int
+
++Reference(book : string, chapter : int, firstVerse : int)
++Reference(book : string, chapter : int, firstVerse : int, lastVerse : int)
++GetReference() : string
+}
+
+class Word{
+-_word : string
+-_isHidden : bool
+
++Word(text : string)
++Hide(): void
++Show() : void
++IsHidden() : bool
++GetWord() : string
+}
+Program --> Scripture
+Scripture --> Reference
+Scripture --> Word
+@enduml
