@@ -1,5 +1,7 @@
 using System;
 
+// To exceed core requirements I made sure to hide only words that haven't already been hidden,
+// and I gave the user the option to choose between 3 different scriptures to memorize.
 class Program
 {
     static void Main(string[] args)
